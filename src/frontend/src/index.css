@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "DM Sans";
+    --font-mono: "JetBrains Mono";
+    --radius: 0.25rem;
+
+    /* Que Professional Services — Industrial-Editorial (dark primary) */
+    --background: 0.16 0.018 160;
+    --foreground: 0.94 0.008 150;
+    --card: 0.21 0.02 160;
+    --card-foreground: 0.94 0.008 150;
+    --popover: 0.23 0.02 160;
+    --popover-foreground: 0.94 0.008 150;
+
+    /* Safety amber — hi-vis CTA */
+    --primary: 0.78 0.16 78;
+    --primary-foreground: 0.18 0.03 78;
+
+    --secondary: 0.26 0.022 160;
+    --secondary-foreground: 0.88 0.01 150;
+    --muted: 0.25 0.02 160;
+    --muted-foreground: 0.66 0.012 155;
+
+    /* Muted copper — WhatsApp / secondary action */
+    --accent: 0.62 0.13 42;
+    --accent-foreground: 0.16 0.02 42;
+
+    --destructive: 0.58 0.2 25;
+    --destructive-foreground: 0.96 0.008 25;
+    --success: 0.68 0.15 150;
+    --warning: 0.78 0.16 78;
+
+    --border: 0.3 0.02 160;
+    --input: 0.3 0.02 160;
+    --ring: 0.78 0.16 78;
+
+    --chart-1: 0.78 0.16 78;
+    --chart-2: 0.62 0.13 42;
+    --chart-3: 0.68 0.15 150;
+    --chart-4: 0.7 0.12 195;
+    --chart-5: 0.6 0.16 300;
+
+    --sidebar: 0.18 0.018 160;
+    --sidebar-foreground: 0.94 0.008 150;
+    --sidebar-primary: 0.78 0.16 78;
+    --sidebar-primary-foreground: 0.18 0.03 78;
+    --sidebar-accent: 0.26 0.022 160;
+    --sidebar-accent-foreground: 0.88 0.01 150;
+    --sidebar-border: 0.3 0.02 160;
+    --sidebar-ring: 0.78 0.16 78;
+
+    /* Blueprint grid + structural surfaces */
+    --grid-line: 0.32 0.02 160;
+    --grid-size: 24px;
+    --gradient-hero: linear-gradient(
+      165deg,
+      oklch(0.2 0.024 160) 0%,
+      oklch(0.16 0.018 160) 55%,
+      oklch(0.145 0.02 160) 100%
+    );
+    --gradient-primary: linear-gradient(
+      180deg,
+      oklch(0.82 0.16 80) 0%,
+      oklch(0.76 0.16 74) 100%
+    );
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 0.16 0.018 160;
+    --foreground: 0.94 0.008 150;
+    --card: 0.21 0.02 160;
+    --card-foreground: 0.94 0.008 150;
+    --popover: 0.23 0.02 160;
+    --popover-foreground: 0.94 0.008 150;
+    --primary: 0.78 0.16 78;
+    --primary-foreground: 0.18 0.03 78;
+    --secondary: 0.26 0.022 160;
+    --secondary-foreground: 0.88 0.01 150;
+    --muted: 0.25 0.02 160;
+    --muted-foreground: 0.66 0.012 155;
+    --accent: 0.62 0.13 42;
+    --accent-foreground: 0.16 0.02 42;
+    --destructive: 0.58 0.2 25;
+    --destructive-foreground: 0.96 0.008 25;
+    --border: 0.3 0.02 160;
+    --input: 0.3 0.02 160;
+    --ring: 0.78 0.16 78;
+    --sidebar: 0.18 0.018 160;
+    --sidebar-foreground: 0.94 0.008 150;
+    --sidebar-primary: 0.78 0.16 78;
+    --sidebar-primary-foreground: 0.18 0.03 78;
+    --sidebar-accent: 0.26 0.022 160;
+    --sidebar-accent-foreground: 0.88 0.01 150;
+    --sidebar-border: 0.3 0.02 160;
+    --sidebar-ring: 0.78 0.16 78;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Blueprint grid overlay — signature surface texture */
+  .bg-blueprint {
+    background-image: linear-gradient(
+        to right,
+        oklch(var(--grid-line) / 0.35) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        oklch(var(--grid-line) / 0.35) 1px,
+        transparent 1px
+      );
+    background-size: var(--grid-size) var(--grid-size);
+  }
+
+  .bg-hero-gradient {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  /* Hard offset block-shadow — stamped layer, not a blur */
+  .shadow-hard {
+    box-shadow: 6px 6px 0 0 oklch(var(--primary));
+  }
+  .shadow-hard-dark {
+    box-shadow: 6px 6px 0 0 oklch(0.12 0.02 160);
+  }
+  .shadow-hard-sm {
+    box-shadow: 4px 4px 0 0 oklch(var(--primary));
+  }
+
+  /* Mono annotation — engineering-spec label */
+  .label-mono {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.2em];
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

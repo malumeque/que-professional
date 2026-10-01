@@ -1,0 +1,20 @@
+{
+  "overview": "A lead-generation website for Que Professional Services, a home services business in Simunye, Eswatini, that captures quote requests and phone calls.",
+  "features": [
+    "Browse home services including concrete, roofing, remodeling, pest control, and plumbing",
+    "Request a free quote through a simple contact form",
+    "Call or message the business directly with one tap",
+    "View a gallery of completed projects filtered by service type",
+    "Find the business location with an embedded Google Map and directions",
+    "Review incoming customer inquiries in a protected admin area"
+  ],
+  "category": "business-website",
+  "tags": [
+    "home-services",
+    "lead-generation",
+    "local-business",
+    "eswatini",
+    "contact-form"
+  ],
+  "last_updated": "2026-10-01T00:37:47.029Z"
+}
